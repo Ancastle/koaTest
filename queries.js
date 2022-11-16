@@ -1,10 +1,18 @@
+DB_URI =
+  "postgresql://postgres:V3rBgPFsHg6M1VMuQfGB@containers-us-west-115.railway.app:7473/railway";
+DB_PASS = "V3rBgPFsHg6M1VMuQfGB";
+DB_USER = "postgres";
+DB_HOST = "containers-us-west-115.railway.app";
+PORT = 7473;
+DB = "railway";
+
 const Pool = require("pg").Pool;
 const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB,
-  password: process.env.DB_PASS,
-  port: process.env.PORT,
+  user: DB_USER,
+  host: DB_HOST,
+  database: DB,
+  password: DB_PASS,
+  port: PORT,
 });
 
 const getTest = (request, response) => {
